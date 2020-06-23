@@ -1,0 +1,23 @@
+{
+    "name": "Section G",
+    "short_name": "SEction G",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Class Documents on the go",
+    "theme_color": "#6671c6",
+    "icons": [
+      {
+       "src": "/assets/favicon/android-chrome-192x192.png",
+       "sizes": "192x192",
+       "type": "image\/png",
+       "density": "4.0"
+      },
+      {
+       "src": "/assets/favicon/android-chrome-512x512.png",
+       "sizes": "512x512",
+       "type": "image\/png",
+       "density": "10.6"
+      }
+    ]
+  }

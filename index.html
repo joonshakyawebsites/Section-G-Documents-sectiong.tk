@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metadatas -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Section G SXC-2019/2021</title>
+    <meta property="og:type" content="profile" />
+    <meta property="og:image" content="https://www.sectiong.tk/logo.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:title" content="Section G SXC-2019/2021" />
+    <meta property="og:description" content="Class Documents on the go" />
+    <meta property="og:url" content="https://www.sectiong.tk/" />
+    <meta property="fb:app_id" content="1265498347173300" />
+
+    <meta name="theme-color" content="#6671c6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-title" content="Section G" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#fff">
+    <meta name="msapplication-TileImage" content="/assets/favicon/mstile-150x150.png">
+
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
+    <link rel="manifest" href="./manifest.json">
+
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#6671c6">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />
+
+    <!-- Imports -->
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css?re=2">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="./assets/css/materialize.min-1.0.0.css">
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="./assets/js/jquery-3.5.0.min.js"></script>
+
+    <!-- Materialize JS -->
+    <script type="text/javascript" src="./assets/js/materialize.min-1.0.0.js"></script>
+
+    <!-- Custom CSS Again -->
+    <link rel="stylesheet" href="./assets/css/styles.css?re=2">
+
+    <!-- Fonts -->
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="./assets/fonts/Google Material Icons/set-font-family.css">
+    <!-- Product Sans -->
+    <link rel="stylesheet" href="./assets/fonts/Product Sans/set-font-family.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div id="page-container" class="grey lighten-3">
+        <div id="content-wrap">
+            <!-- Navigation -->
+            <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper">
+                        <div class="container">
+                            <a href="#top" class="brand-logo center waves-effect waves-light">Section<span
+                                    style="color: transparent;">i</span>G</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Navigation ends -->
+
+            <!-- Back to top -->
+            <div id="top" class="scrollspy"></div>
+            <div id="contents">
+               
+            </div>
+        </div>
+        <!-- Footer -->
+        <div id="up-btn">
+            <a href="#top" class="btn-floating btn-large waves-effect waves-light deep-purple lighten-1 hoverable">↑</a>
+        </div>
+        <footer class="page-footer">
+            <!-- <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Heading</h5>
+                        <p class="grey-text text-lighten-4">Description</p>
+                    </div>
+                </div>
+            </div> -->
+            <div class="footer-copyright">
+                <div class="container footer-flex">
+                    <a href="./index.html"><u>Copyright &copy; Joon Shakya</u></a>
+                    <p>V0.1</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        function check() {
+            $.ajax({
+                url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
+                dataType: 'json',
+                success: function(response){
+                    $('#contents').html(response['html'])
+                },
+                error: function(rs, e) {
+                    alert(rs.responseText)
+                }
+            })
+        } 
+        check();
+
+        function UpBtn() {
+            let upBtn = document.getElementById('up-btn');
+            let documents = document.getElementById('documents');
+            let distanceToTop = documents.offsetTop;
+            
+            let myScrollFunc = function () {
+                var y = window.scrollY;
+                if (y >= distanceToTop) {
+                    upBtn.className = "fixed-action-btn shown";
+                } else {
+                    upBtn.className = "fixed-action-btn";
+                }
+            };
+            window.addEventListener("scroll", myScrollFunc);
+        }
+
+        // Finish loading the document
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Initialize Scrollspy
+            const scrollSpy = document.querySelectorAll('.scrollspy');
+            M.ScrollSpy.init(scrollSpy, {
+                scrollOffset: 64
+            });
+            
+        }); // Load document ends
+
+        window.addEventListener('load', e => {
+            registerSW();
+            function registerSW() { 
+                if ('serviceWorker' in navigator) { 
+                    try {
+                        navigator.serviceWorker.register("sw.js"); 
+                    } catch (e) {
+                        alert('ServiceWorker registration failed. Sorry about that.'); 
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
