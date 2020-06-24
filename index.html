@@ -231,13 +231,17 @@
         var wrapper = document.querySelector('.pWrapper');
 
         function ready() {
-            growDiv.style.height = (wrapper.clientHeight + 32) + "px";
-            growDiv.style.transform = "translateY(0)";
+            if(growDiv) {
+                growDiv.style.height = (wrapper.clientHeight + 32) + "px";
+                growDiv.style.transform = "translateY(0)";
+            }
         }
 
         function closeThis() {
-            growDiv.style.height = "2em";
-            growDiv.style.transform = "translateY(-50vh)";
+            if(growDiv) {
+                growDiv.style.height = "2em";
+                growDiv.style.transform = "translateY(-50vh)";
+            }
         }
 
         // do action when finished install
