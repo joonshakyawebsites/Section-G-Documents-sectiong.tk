@@ -64,7 +64,7 @@
         integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 </head>
 
-<body>
+<body onbeforeunload="if (typeof closeThis === 'function') { return closeThis() }">
     <div id="page-container" class="grey lighten-3">
         <div id="content-wrap">
             <!-- Navigation -->
@@ -82,6 +82,23 @@
 
             <!-- Back to top -->
             <div id="top" class="scrollspy"></div>
+            <div id="flash" class="popup section" style="margin-bottom: -2em;">
+                <div class="container pWrapper">
+                    <div class="row">
+                        <div class="col s12 m8 offset-m2">
+                            <div class="card hoverable">
+                                <div class="card-content flow-text">
+                                    <i class="close material-icons right" onclick="closeThis()" style="cursor: pointer;">close</i>
+                                    <p id="install-message">
+                                        You can install this app for easy access.
+                                        <button id="install" class="btn deep-purple lighten-1" style="margin: .5em auto auto auto; display: block;">Install Section G</button>                        
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="contents">
                 <div class="middle flow-text">
                     <div class="cardhold">
@@ -161,10 +178,76 @@
     </div>
     
     <script>
+        // Install PWA Prompt
+        // variable store event
+        window.deferredPrompt = {};
+
+        // get button with id
+        const install_button = document.querySelector('#install');
+        const install_message = document.querySelector('#flash')
+
+        // if the app can be installed emit beforeinstallprompt
+        window.addEventListener('beforeinstallprompt', e => {
+            // this event does not fire if the application is already installed
+            // then your button still hidden ;)
+
+            // show button with display:block;
+            install_message.style.display = 'block';
+
+            // prevent default event
+            e.preventDefault();
+
+            // store install avaliable event
+            window.deferredPrompt = e;
+
+            // wait for click install button by user
+            install_button.addEventListener('click', e => {
+                window.deferredPrompt.prompt();
+                window.deferredPrompt.userChoice.then(choiceResult => {
+                if (choiceResult.outcome === 'accepted') {
+                    // user accept the prompt
+
+                    // lets hidden button
+                    install_message.style.display = 'none';
+                } else {
+                    console.log('User dismissed the prompt');
+                }
+                window.deferredPrompt = null;
+                });
+            });
+            ready();
+        });
+
+        // Close button
+        var growDiv = document.getElementById('flash');
+        var wrapper = document.querySelector('.pWrapper');
+
+        function ready() {
+            growDiv.style.height = (wrapper.clientHeight + 32) + "px";
+            growDiv.style.transform = "translateY(0)";
+        }
+
+        function closeThis() {
+            growDiv.style.height = "2em";
+            growDiv.style.transform = "translateY(-50vh)";
+        }
+
+        // if are standalone android OR safari
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+            // hidden the button
+            install_message.style.display = 'none';
+        }
+
+        // do action when finished install
+        window.addEventListener('appinstalled', e => {
+            location.reload();
+            return false;
+        });
+
         function check() {
             $.ajax({
-                url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
-                // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
+                // url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
+                url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
                     $('#contents').fadeOut("fast", function() {

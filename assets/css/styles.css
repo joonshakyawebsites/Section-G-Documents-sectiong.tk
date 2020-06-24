@@ -442,4 +442,13 @@ nav .sidenav-trigger:hover {
 #logout-btn {
   margin-right: 1em;
 }
+
+.popup {
+  height: 2em;
+  -webkit-transform: translateY(-50vh);
+          transform: translateY(-50vh);
+  overflow: hidden;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
 /*# sourceMappingURL=styles.css.map */

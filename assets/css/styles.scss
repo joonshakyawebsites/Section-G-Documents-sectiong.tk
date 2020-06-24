@@ -351,3 +351,10 @@ nav .sidenav-trigger:hover {
  {
     margin-right: 1em;
 }
+
+.popup {
+    height: 2em;
+    transform: translateY(-50vh);
+    overflow: hidden;
+    transition: all .5s;
+}
