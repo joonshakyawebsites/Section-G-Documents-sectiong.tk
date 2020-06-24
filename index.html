@@ -193,6 +193,7 @@
 
             // show button with display:block;
             install_message.style.display = 'block';
+            ready();
 
             // prevent default event
             e.preventDefault();
@@ -209,14 +210,21 @@
 
                     // lets hidden button
                     install_message.style.display = 'none';
+                    closeThis();
                 } else {
                     console.log('User dismissed the prompt');
                 }
                 window.deferredPrompt = null;
                 });
             });
-            ready();
         });
+
+        // if are standalone android OR safari
+        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+            // hidden the button
+            install_message.style.display = 'none';
+            closeThis();
+        }
 
         // Close button
         var growDiv = document.getElementById('flash');
@@ -230,12 +238,6 @@
         function closeThis() {
             growDiv.style.height = "2em";
             growDiv.style.transform = "translateY(-50vh)";
-        }
-
-        // if are standalone android OR safari
-        if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
-            // hidden the button
-            install_message.style.display = 'none';
         }
 
         // do action when finished install
