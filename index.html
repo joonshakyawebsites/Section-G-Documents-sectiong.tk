@@ -72,7 +72,7 @@
                 <nav>
                     <div class="nav-wrapper">
                         <div class="container">
-                            <a href="#top" class="brand-logo center waves-effect waves-light">Section<span
+                            <a href="/" class="brand-logo center">Section<span
                                     style="color: transparent;">i</span>G</a>
                         </div>
                     </div>
@@ -83,7 +83,59 @@
             <!-- Back to top -->
             <div id="top" class="scrollspy"></div>
             <div id="contents">
-               
+                <div class="middle flow-text">
+                    <div class="cardhold">
+                        <div class="preloader-wrapper big active">
+                            <div class="spinner-layer spinner-blue">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                      
+                            <div class="spinner-layer spinner-red">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                      
+                            <div class="spinner-layer spinner-yellow">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+
+                            <div class="spinner-layer spinner-green">
+                                <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="gap-patch">
+                                    <div class="circle"></div>
+                                </div>
+                                <div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Footer -->
@@ -115,10 +167,17 @@
                 // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
-                    $('#contents').html(response['html'])
+                    $('#contents').fadeOut("fast", function() {
+                        $('#contents').html(response['html']);
+                        $('#contents').fadeIn("fast");
+                    });
                 },
                 error: function(rs, e) {
-                    alert(rs.responseText)
+                    // alert(rs.responseText)
+                    $('#contents').fadeOut("fast", function() {
+                        $('#contents').html(`<div class="middle flow-text" style="padding-top: 1.75rem;">Failed to load data</div>`)
+                        $('#contents').fadeIn("fast");
+                    });
                 }
             })
         } 

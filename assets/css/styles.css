@@ -406,4 +406,40 @@ nav .sidenav-trigger:hover {
 .materialboxed:hover:not(.active) {
   opacity: 1;
 }
+
+.middle {
+  margin-top: 20vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cardhold {
+  padding: .8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 4px 4px 12px #00000088;
+  box-shadow: 4px 4px 12px #00000088;
+}
+
+#login-btn,
+#logout-btn {
+  margin-right: 1em;
+}
 /*# sourceMappingURL=styles.css.map */
