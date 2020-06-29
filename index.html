@@ -278,15 +278,17 @@
                 // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
-                    $('#contents').slideUp();
-                    $('#contents').html(response['html']);
-                    $('#contents').slideDown();
+                    $('#contents').slideUp("fast", function() {
+                        $('#contents').html(response['html']);
+                        $('#contents').slideDown("fast");
+                    });
                 },
                 error: function(rs, e) {
                     // alert(rs.responseText)
-                    $('#contents').slideUp();
-                    $('#contents').html(`<div class="middle flow-text" style="padding-top: 1.75rem;">Failed to load data</div>`)
-                    $('#contents').slideDown();
+                    $('#contents').slideUp("fast", function() {
+                        $('#contents').html(`<div class="middle flow-text" style="padding-top: 1.75rem;">Failed to load data</div>`)
+                        $('#contents').slideDown("fast");
+                    });
                 }
             })
         } 
