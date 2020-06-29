@@ -278,14 +278,14 @@
                 // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
-                    $('#contents').slideUp("fast", function() {
+                    $('#contents').slideUp("slow", function() {
                         $('#contents').html(response['html']);
                         $('#contents').slideDown("fast");
                     });
                 },
                 error: function(rs, e) {
                     // alert(rs.responseText)
-                    $('#contents').slideUp("fast", function() {
+                    $('#contents').slideUp("slow", function() {
                         $('#contents').html(`<div class="middle flow-text" style="padding-top: 1.75rem;">Failed to load data</div>`)
                         $('#contents').slideDown("fast");
                     });
