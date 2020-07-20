@@ -358,3 +358,45 @@ nav .sidenav-trigger:hover {
     overflow: hidden;
     transition: all .5s;
 }
+
+table td, table th {
+    text-align: center;
+    font-size: .7em;
+    border: 1px solid rgb(187, 187, 187);
+}
+
+.English {
+    background: rgb(217, 226, 243);
+}
+
+.Maths {
+    background: rgb(251, 228, 213);
+}
+
+.Nepali {
+    background: rgb(237, 237, 237);
+}
+
+.Chemistry {
+    background: rgb(255, 242, 204);
+}
+
+.Physics {
+    background: rgb(226, 239, 217);
+}
+
+.join-btn {
+    line-height: 2em;
+    height: 2em;
+    padding: 0 1em; 
+}
+
+.p_teacher {
+    border: 1px solid;
+    border-radius: 8px;
+    margin: auto;
+    width: auto;
+    display: inline-block;
+    padding: .4em;
+    padding-top: 0;
+}

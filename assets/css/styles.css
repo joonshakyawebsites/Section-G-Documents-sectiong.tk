@@ -451,4 +451,46 @@ nav .sidenav-trigger:hover {
   -webkit-transition: all .5s;
   transition: all .5s;
 }
+
+table td, table th {
+  text-align: center;
+  font-size: .7em;
+  border: 1px solid #bbbbbb;
+}
+
+.English {
+  background: #d9e2f3;
+}
+
+.Maths {
+  background: #fbe4d5;
+}
+
+.Nepali {
+  background: #ededed;
+}
+
+.Chemistry {
+  background: #fff2cc;
+}
+
+.Physics {
+  background: #e2efd9;
+}
+
+.join-btn {
+  line-height: 2em;
+  height: 2em;
+  padding: 0 1em;
+}
+
+.p_teacher {
+  border: 1px solid;
+  border-radius: 8px;
+  margin: auto;
+  width: auto;
+  display: inline-block;
+  padding: .4em;
+  padding-top: 0;
+}
 /*# sourceMappingURL=styles.css.map */
