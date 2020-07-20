@@ -234,8 +234,6 @@ nav {
   background: -webkit-gradient(linear, left top, right top, from(#3498db), to(#8e44ad));
   background: linear-gradient(90deg, #3498db, #8e44ad);
   font-family: 'Product Sans Bold', sans-serif;
-  -webkit-transition: all 0.375s 1.25s cubic-bezier(0.145, 0.865, 0.57, 0.94);
-  transition: all 0.375s 1.25s cubic-bezier(0.145, 0.865, 0.57, 0.94);
 }
 
 @media only screen and (min-width: 601px) {
@@ -492,5 +490,10 @@ table td, table th {
   display: inline-block;
   padding: .4em;
   padding-top: 0;
+}
+
+.routine {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 /*# sourceMappingURL=styles.css.map */

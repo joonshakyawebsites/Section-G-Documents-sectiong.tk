@@ -172,7 +172,7 @@ nav {
     opacity: .95;
     background: $gradient;
     font-family: 'Product Sans Bold', sans-serif;
-    transition: all .375s 1.25s cubic-bezier(0.145, 0.865, 0.570, 0.940);
+    // transition: all .375s 1.25s cubic-bezier(0.145, 0.865, 0.570, 0.940);
 }
 
 @media only screen and (min-width: 601px) {
@@ -399,4 +399,9 @@ table td, table th {
     display: inline-block;
     padding: .4em;
     padding-top: 0;
+}
+
+.routine {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
 }
