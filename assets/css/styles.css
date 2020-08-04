@@ -493,7 +493,23 @@ table td, table th {
 }
 
 .routine {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  padding: 0;
+}
+
+.routine::after, .routine::before {
+  content: '';
+  min-width: 24px;
+}
+
+.overflow-margin {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 1.5rem 0;
 }
 /*# sourceMappingURL=styles.css.map */

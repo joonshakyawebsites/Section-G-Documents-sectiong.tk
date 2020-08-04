@@ -402,6 +402,17 @@ table td, table th {
 }
 
 .routine {
+    display: flex;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
+    padding: 0;
 }
+
+.routine::after, .routine::before  { content: ''; min-width: 24px; }
+
+.overflow-margin {
+    flex: 1;
+    margin: 1.5rem 0;
+}
+
+
