@@ -18,6 +18,8 @@ html {
 }
 
 body {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   font-family: 'Product Sans', sans-serif;
 }
 
@@ -452,6 +454,7 @@ table td, table th {
   text-align: center;
   font-size: .7em;
   border: 1px solid #bbbbbb;
+  min-width: 6rem;
 }
 
 .English {
