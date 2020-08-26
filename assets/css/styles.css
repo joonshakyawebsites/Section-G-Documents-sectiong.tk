@@ -429,7 +429,7 @@ table td, table th {
   text-align: center;
   font-size: .7em;
   border: 1px solid #bbbbbb;
-  min-width: 5.6rem;
+  min-width: 6.4rem;
 }
 
 table tr:nth-child(odd) {
