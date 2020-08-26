@@ -501,4 +501,12 @@ hr {
   margin: 1.2rem 0 .6rem 0;
   border: 1px #ccc solid;
 }
+
+td a.z-depth-2 {
+  padding: .2rem 1rem;
+  line-height: 2;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  color: black;
+}
 /*# sourceMappingURL=styles.css.map */
