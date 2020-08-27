@@ -30,6 +30,10 @@ body {
     background: linear-gradient(90deg, #3498db, #8e44ad);
 }
 
+.row {
+    margin: 0;
+}
+
 .btn-floating {
     font-family: monospace, monospace, Arial, Helvetica, sans-serif;
     display: flex;
@@ -102,6 +106,10 @@ body {
 
 .card, .card-panel {
     border-radius: 1.5em;
+}
+
+.card-panel {
+    margin: 1.5rem 0;
 }
 
 .card-action {
@@ -277,32 +285,6 @@ nav .sidenav-trigger:hover {
     color: #fff;
 }
 
-.dropdown-content li>a>i {
-    margin-right: 12px;
-}
-.dropdown-content li>a.disabled {
-    color: #ddd;
-}.dropdown-content li>a.disabled:hover {
-    background: #fff;
-}
-
-.tabs-content.carousel {
-    min-height: 60vh;
-    flex: 1;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-} 
-
-.tabs-content.carousel .carousel-item {
-    flex: 1;
-    min-height: 60vh;
-}
-
-.tabs {
-    border-radius: 1.5em 1.5em 0 0;
-    background: transparent;
-}
-
 .materializecss-form .input-field {
     margin-bottom: 0;
 }
@@ -408,7 +390,7 @@ table tr:nth-child(odd) {
 
 .routine {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     padding: 0;
 }
@@ -420,4 +402,11 @@ table tr:nth-child(odd) {
     margin: 1.5rem 0;
 }
 
+.bold {
+    font-family: 'Product Sans Bold';
+}
 
+hr {
+    margin: 1.2rem 0 .6rem 0;
+    border: 1px #ccc solid;
+}
