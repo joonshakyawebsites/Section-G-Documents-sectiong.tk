@@ -273,14 +273,14 @@
         });
 
         function check() {
-            console.time('Time taken')
+            console.time('Time taken by heroku')
             $.ajax({
-                // url: "https://sectiong.herokuapp.com/?pass=" + localStorage.getItem('password'),
-                url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
+                url: "https://sectiong.herokuapp.com/?pass=" + localStorage.getItem('password'),
+                // url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
                 // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
-                    console.timeEnd('Time taken')
+                    console.timeEnd('Time taken by heroku')
                     $('#contents').fadeOut("fast", function() {
                         $('#contents').html(response['html']);
                         $('#contents').fadeIn("fast");
