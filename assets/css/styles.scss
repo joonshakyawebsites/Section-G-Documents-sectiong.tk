@@ -306,20 +306,16 @@ td a.z-depth-2 {
     margin: 1em 0 2em 0;
 }
 
-.preload * {
-    transition: none !important;
-}
-
 td a.z-depth-2, input {
-    transition: color .5s;
+    transition: all .3s;
 }
 
 #page-container, .card, .card-panel {
-    transition: background-color .5s, color .5s;
+    transition: all .3s;
 }
 
 th, td, tr, html {
-    transition: background-color .5s;
+    transition: background-color .3s;
 }
 
 // Dark mode
