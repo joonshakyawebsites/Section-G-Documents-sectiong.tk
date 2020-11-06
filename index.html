@@ -296,7 +296,7 @@
                         error: function(rs, e) {
                             // alert(rs.responseText)
                             $('#contents').fadeOut("fast", function() {
-                                $('#contents').html(`<div class="middle flow-text" style="padding-top: 1.75rem;">Failed to load data</div>`)
+                                $('#contents').html(`<div class="middle flow-text failed-to-load" style="padding-top: 1.75rem;">Failed to load data</div>`)
                                 $('#contents').fadeIn("fast");
                             });
                         }
