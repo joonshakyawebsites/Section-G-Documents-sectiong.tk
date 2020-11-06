@@ -60,9 +60,9 @@
     <link href="/assets/splashscreens/ipadpro2_splash_l.png" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" rel="apple-touch-startup-image" />
 
     <!-- Imports -->
-    
+  
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/styles.css?re=16">
+    <!-- <link class="custom-css" type="text/css" rel="stylesheet" href="./assets/css/styles.css?re=16"> -->
 
     <!-- Materialize CSS -->
     <link rel="stylesheet" href="./assets/css/materialize.min-1.0.0.css">
@@ -74,7 +74,7 @@
     <script type="text/javascript" src="./assets/js/materialize.min-1.0.0.js"></script>
 
     <!-- Custom CSS Again -->
-    <link rel="stylesheet" href="./assets/css/styles.css?re=16">
+    <link class="custom-css" type="text/css" rel="stylesheet" href="./assets/css/styles.css?re=16">
 
     <!-- Fonts -->
     <!-- Material Icons -->
@@ -83,11 +83,13 @@
     <link rel="stylesheet" href="./assets/fonts/Product Sans/set-font-family.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 </head>
 
-<body onbeforeunload="if (typeof closeThis === 'function') { return closeThis() }">
-    <div id="page-container" class="grey lighten-3">
+<body onbeforeunload="if (typeof closeThis === 'function') { return closeThis() }" class="preload lightmode">
+    <!-- Custom Dark Mode JS -->
+    <script type="text/javascript" src="./assets/js/custom-dark-mode.js"></script>
+    <div id="page-container">
         <div id="content-wrap">
             <!-- Navigation -->
             <div class="navbar-fixed">
@@ -178,9 +180,6 @@
             </div>
         </div>
         <!-- Footer -->
-        <div id="up-btn">
-            <a href="#top" class="btn-floating btn-large waves-effect waves-light deep-purple lighten-1 hoverable">↑</a>
-        </div>
         <footer class="page-footer">
             <!-- <div class="container">
                 <div class="row">
@@ -275,8 +274,8 @@
         function check() {
             $.ajax({
                 // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
-                // url: 'http://192.168.16.104:8000?pass=' + localStorage.getItem('password'),
-                url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
+                url: 'http://192.168.16.104:8000?pass=' + localStorage.getItem('password'),
+                // url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
                     $('#contents').fadeOut("fast", function() {
@@ -308,22 +307,6 @@
         
         check();
 
-        function UpBtn() {
-            let upBtn = document.getElementById('up-btn');
-            let documents = document.getElementById('documents');
-            let distanceToTop = documents.offsetTop;
-            
-            let myScrollFunc = function () {
-                var y = window.scrollY;
-                if (y >= distanceToTop) {
-                    upBtn.className = "fixed-action-btn shown";
-                } else {
-                    upBtn.className = "fixed-action-btn";
-                }
-            };
-            window.addEventListener("scroll", myScrollFunc);
-        }
-
         // Finish loading the document
         document.addEventListener('DOMContentLoaded', function () {
             
@@ -334,8 +317,9 @@
             });
             
         }); // Load document ends
-
+        
         window.addEventListener('load', e => {
+            $("body").removeClass("preload");
             registerSW();
             function registerSW() { 
                 if ('serviceWorker' in navigator) { 

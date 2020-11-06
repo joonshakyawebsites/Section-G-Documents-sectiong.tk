@@ -1,4 +1,42 @@
-$gradient: linear-gradient(90deg, #3498db, #8e44ad);
+// $gradient: linear-gradient(90deg, #3498db, #8e44ad);
+
+:root {
+    --clr-page-background: #eee;
+    --gradient-pos: left;
+    --clr-tr: #eee;
+    --clr-English:  rgb(217, 226, 243);
+    --clr-Maths:  rgb(251, 228, 213);
+    --clr-Nepali:  rgb(237, 237, 237);
+    --clr-Chemistry:  rgb(255, 242, 204);
+    --clr-Physics:  rgb(226, 239, 217);
+    --clr-cardhold: #fff;
+    --clr-card: #fff;
+    --clr-text: #000;
+    --clr-disabled-text: #9F9F9F;
+    --clr-disabled-background: #DFDFDF;
+}
+
+.darkmode {
+    --clr-page-background: #212121;
+    --gradient-pos: right;
+    --clr-tr: #222;
+    --clr-English:   rgb(12, 41, 95);
+    --clr-Maths:   rgb(107, 65, 37);
+    --clr-Nepali:   rgb(92, 92, 92);
+    --clr-Chemistry:   rgb(99, 77, 13);
+    --clr-Physics:   rgb(55, 85, 34);
+    --clr-cardhold: #444;
+    --clr-card: #424242;
+    --clr-text: rgb(223, 223, 223);
+    --clr-disabled-text: #424242;
+    --clr-disabled-background: #7e7e7e;
+}
+
+.gradient, nav, .footer-copyright {
+    background: linear-gradient(to right, #3498db, #8e44ad 34%, #333 65%);;
+    background-size: 300%;
+    transition: .5s;
+}
 
 ::-webkit-scrollbar
 {
@@ -26,29 +64,8 @@ body {
     font-family: 'Product Sans', sans-serif;
 }
 
-.gradient {
-    background: linear-gradient(90deg, #3498db, #8e44ad);
-}
-
 .row {
     margin: 0;
-}
-
-.btn-floating {
-    font-family: monospace, monospace, Arial, Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
-}
-
-#up-btn {
-    transition: all .2s;
-    transform: scale(0);
-}
-
-#up-btn.shown {
-    transform: scale(1);
 }
 
 #page-container {
@@ -83,27 +100,6 @@ body {
     margin-top: .5em;
 }
 
-#detail .row {
-    flex: 1;
-}
-
-.flex {
-    display: flex;
-}
-
-.full-flex {
-    flex: 1;
-}
-
-#detail .col.flex {
-    height: 100%;
-    flex-direction: column;;
-}
-
-.indicator {
-    background-color: #9c27b0 !important;
-}
-
 .card, .card-panel {
     border-radius: 1.5em;
 }
@@ -120,21 +116,6 @@ body {
     border-radius: 10px;
 }
 
-.cardhold.go-up {
-    animation: move-up .45s ease-in;
-    animation-fill-mode: forwards;
-}
-
-.loader.hidden {
-    animation: wipe .9s .2s cubic-bezier(0.145, 0.865, 0.570, 0.940);
-    animation-fill-mode: forwards;
-}
-
-nav.hidden {
-    transform: translateY(-100%);
-    transition: all 0s;
-}
-
 .normal-link:hover {
     text-decoration: underline;
 }
@@ -148,17 +129,6 @@ nav.hidden {
     100% {
         opacity: 0;
         transform: translateY(-30vh) scale(1.25);
-    }
-}
-
-@keyframes wipe {
-    50% {
-        transform: translateY(0);
-    }
-
-    100% {
-        transform: translateY(-100%);
-        visibility: hidden;
     }
 }
 
@@ -178,7 +148,6 @@ nav {
     line-height: 56px;
     padding: env(safe-area-inset-top) 0 0 0;
     opacity: .95;
-    background: $gradient;
     font-family: 'Product Sans Bold', sans-serif;
     // transition: all .375s 1.25s cubic-bezier(0.145, 0.865, 0.570, 0.940);
 }
@@ -188,43 +157,6 @@ nav {
         line-height: 64px;
         height: calc(64px + env(safe-area-inset-top));
     }
-}
-
-nav .nav-wrapper {
-    background: $gradient;
-}
-
-nav .nav-wrapper ul li {
-    display: flex;
-}
-
-nav .nav-wrapper ul li a {
-    font-size: 24px;
-    padding: 0 22px;
-}
-
-nav .nav-wrapper ul li a:hover {
-    background: #ffffff25;
-}
-
-nav .sidenav-trigger {
-    transform: translateX(-16px);
-    padding: 0 16px;
-    transition: all .2s;
-}
-
-nav .sidenav-trigger:hover {
-    background: #ffffff25;
-}
-
-.sidenav a {
-    transition: all .2s;
-}
-
-.top-button {
-    position: fixed;
-    bottom: 4vh;
-    right: 4vh;
 }
 
 .brand-logo {
@@ -244,29 +176,9 @@ nav .sidenav-trigger:hover {
     transition: all .2s;
 }
 
-.card-content h5 {
-    margin-top: 0;
-}
-
-.sub-heading {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.section-heading {
-    font-size: 2.25em;
-    padding: .125em .25em;
-    border-bottom: .06em solid #000;
-}
-
 .page-footer {
     padding-top: 0;
     background: transparent;
-}
-
-.footer-copyright {
-    background: $gradient;
 }
 
 .page-footer .footer-copyright {
@@ -283,24 +195,6 @@ nav .sidenav-trigger:hover {
 .footer-flex>* {
     margin: 8px;
     color: #fff;
-}
-
-.materializecss-form .input-field {
-    margin-bottom: 0;
-}
-
-.materializecss-form p, .materializecss-form ul {
-    color: #666;
-    margin: 0 0 4px 0;
-}
-
-.materializecss-form .help-block {
-    color: rgb(255, 87, 87) !important;
-    margin: 0;
-}
-
-.materialboxed:hover:not(.active) {
-    opacity: 1;
 }
 
 .middle {
@@ -322,7 +216,6 @@ nav .sidenav-trigger:hover {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    background: #fff;
     border-radius: 50%;
     -webkit-box-shadow: 4px 4px 12px #00000088;
     box-shadow: 4px 4px 12px #00000088;
@@ -346,30 +239,6 @@ table td, table th {
     font-size: .7em;
     border: 1px solid rgb(187, 187, 187);
     min-width: 6.4rem;
-}
-
-table tr:nth-child(odd) {
-    background: #eee
-}
-
-.English {
-    background: rgb(217, 226, 243);
-}
-
-.Maths {
-    background: rgb(251, 228, 213);
-}
-
-.Nepali {
-    background: rgb(237, 237, 237);
-}
-
-.Chemistry {
-    background: rgb(255, 242, 204);
-}
-
-.Physics {
-    background: rgb(226, 239, 217);
 }
 
 .join-btn {
@@ -416,7 +285,6 @@ td a.z-depth-2 {
     line-height: 2;
     margin: 1rem 0;
     border-radius: 1rem;
-    color: rgb(0, 0, 0);
 }
 
 .card-content.flow-text {
@@ -435,5 +303,72 @@ td a.z-depth-2 {
 }
 
 #contact {
-    margin-top: 1em;
+    margin: 1em 0 2em 0;
+}
+
+.preload * {
+    transition: none !important;
+}
+
+td a.z-depth-2, input {
+    transition: color .5s;
+}
+
+#page-container, .card, .card-panel {
+    transition: background-color .5s, color .5s;
+}
+
+th, td, tr, html {
+    transition: background-color .5s;
+}
+
+// Dark mode
+.gradient, nav, .footer-copyright {
+    background-position: var(--gradient-pos);
+}
+
+table tr:nth-child(odd) {
+    background: var(--clr-tr);
+}
+
+.English {
+    background: var(--clr-English);
+}
+
+.Maths {
+    background: var(--clr-Maths);
+}
+
+.Nepali {
+    background: var(--clr-Nepali);
+}
+
+.Chemistry {
+    background: var(--clr-Chemistry);
+}
+
+.Physics {
+    background: var(--clr-Physics);
+}
+
+#page-container, html {
+    background: var(--clr-page-background);
+}
+
+.cardhold {
+    background: var(--clr-cardhold);
+}
+
+.card, .card-panel {
+    background: var(--clr-card);
+    color: var(--clr-text);
+}
+
+input, td a.z-depth-2 {
+    color: var(--clr-text);
+}
+
+a.disabled.both-mode {
+    background-color: var(--clr-disabled-background) !important;
+    color: var(--clr-disabled-text) !important;
 }
