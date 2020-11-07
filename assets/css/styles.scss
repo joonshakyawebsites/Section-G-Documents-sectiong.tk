@@ -307,11 +307,11 @@ td a.z-depth-2 {
 }
 
 td a.z-depth-2, input {
-    transition: all .3s;
+    transition: all .2s, color .5s;
 }
 
 #page-container, .card, .card-panel {
-    transition: all .3s;
+    transition: all .2s, background-color .5s, color .5s;
 }
 
 th, td, tr, html {
