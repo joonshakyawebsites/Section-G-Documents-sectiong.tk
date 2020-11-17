@@ -97,6 +97,7 @@ body {
 
 .card-panel .title {
   font-size: 1.8rem;
+  margin-bottom: .2em;
 }
 
 .card-panel .content {
