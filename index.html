@@ -268,6 +268,18 @@
             return false;
         });
 
+        let contactName = "";
+        let contactText = "";
+
+        function replace(response) {
+            $('#contents').fadeOut("fast", function() {
+                $('#contents').html(response['html']);
+                $('#contents').fadeIn("fast");
+                $('#name').val(contactName);
+                $('#textarea').val(contactText);
+            });
+        }
+
         function check() {
             $.ajax({
                 // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
@@ -275,20 +287,14 @@
                 url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
-                    $('#contents').fadeOut("fast", function() {
-                        $('#contents').html(response['html']);
-                        $('#contents').fadeIn("fast");
-                    });
+                    replace(response);
                 },
                 error: function(rs, e) {
                     $.ajax({
                         url: "https://sectiong.herokuapp.com/?pass=" + localStorage.getItem('password'),
                         dataType: 'json',
                         success: function(response){
-                            $('#contents').fadeOut("fast", function() {
-                                $('#contents').html(response['html']);
-                                $('#contents').fadeIn("fast");
-                            });
+                            replace(response);
                         },
                         error: function(rs, e) {
                             // alert(rs.responseText)
