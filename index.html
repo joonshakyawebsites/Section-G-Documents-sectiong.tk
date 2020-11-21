@@ -71,7 +71,7 @@
     <script type="text/javascript" src="./assets/js/materialize.min-1.0.0.js"></script>
 
     <!-- Custom CSS Again -->
-    <link class="custom-css" type="text/css" rel="stylesheet" href="./assets/css/styles.css?re=20">
+    <link class="custom-css" type="text/css" rel="stylesheet" href="./assets/css/styles.css?re=21">
 
     <!-- Fonts -->
     <!-- Material Icons -->
@@ -297,7 +297,6 @@
                             replace(response);
                         },
                         error: function(rs, e) {
-                            // alert(rs.responseText)
                             $('#contents').fadeOut("fast", function() {
                                 $('#contents').html(`<div class="middle flow-text failed-to-load" style="padding-top: 1.75rem;">Failed to load data</div>`)
                                 $('#contents').fadeIn("fast");

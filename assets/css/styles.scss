@@ -361,7 +361,7 @@ table tr:nth-child(odd) {
     color: var(--clr-text);
 }
 
-input, td a.z-depth-2, .failed-to-load {
+input, textarea, td a.z-depth-2, .failed-to-load {
     color: var(--clr-text);
 }
 
