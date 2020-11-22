@@ -417,4 +417,12 @@ a.disabled.both-mode {
   background-color: var(--clr-disabled-background) !important;
   color: var(--clr-disabled-text) !important;
 }
+
+.title .regular {
+  color: #32CD32;
+}
+
+.title .temporary {
+  color: #FF7F50;
+}
 /*# sourceMappingURL=styles.css.map */
