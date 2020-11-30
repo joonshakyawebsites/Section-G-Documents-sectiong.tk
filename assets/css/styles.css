@@ -12,6 +12,12 @@
   --clr-text: #000;
   --clr-disabled-text: #9F9F9F;
   --clr-disabled-background: #DFDFDF;
+  --clr-toast-error-bg: #ffebee;
+  --clr-toast-success-bg: #f1f8e9;
+  --clr-toast-info-bg: #e3f2fd;
+  --clr-toast-error-txt: #f44336;
+  --clr-toast-success-txt: #4caf50;
+  --clr-toast-info-txt: #3f51b5;
 }
 
 .darkmode {
@@ -28,6 +34,12 @@
   --clr-text: rgb(223, 223, 223);
   --clr-disabled-text: #424242;
   --clr-disabled-background: #7e7e7e;
+  --clr-toast-error-bg: #b71c1c;
+  --clr-toast-success-bg: #33691e;
+  --clr-toast-info-bg: #0d47a1;
+  --clr-toast-error-txt: #fff;
+  --clr-toast-success-txt: #fff;
+  --clr-toast-info-txt: #fff;
 }
 
 .gradient, nav, .footer-copyright {
@@ -368,6 +380,11 @@ th, td, tr, html {
   transition: background-color .3s;
 }
 
+.toast-msg.error, .toast-msg.success, .toast-msg.info {
+  -webkit-transition: background-color .5s, color .5s;
+  transition: background-color .5s, color .5s;
+}
+
 .gradient, nav, .footer-copyright {
   background-position: var(--gradient-pos);
 }
@@ -416,6 +433,21 @@ input, textarea, td a.z-depth-2, .failed-to-load {
 a.disabled.both-mode {
   background-color: var(--clr-disabled-background) !important;
   color: var(--clr-disabled-text) !important;
+}
+
+.toast-msg.error {
+  background-color: var(--clr-toast-error-bg);
+  color: var(--clr-toast-error-txt);
+}
+
+.toast-msg.success {
+  background-color: var(--clr-toast-success-bg);
+  color: var(--clr-toast-success-txt);
+}
+
+.toast-msg.info {
+  background-color: var(--clr-toast-info-bg);
+  color: var(--clr-toast-info-txt);
 }
 
 .title .regular {
