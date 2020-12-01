@@ -71,7 +71,7 @@
     <script type="text/javascript" src="./assets/js/materialize.min-1.0.0.js"></script>
 
     <!-- Custom CSS Again -->
-    <link class="custom-css" type="text/css" rel="stylesheet" href="./assets/css/styles.css?re=23">
+    <link class="custom-css" type="text/css" rel="stylesheet" href="./assets/css/styles.css?re=24">
 
     <!-- Fonts -->
     <!-- Material Icons -->
@@ -282,9 +282,9 @@
 
         function check() {
             $.ajax({
-                // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
+                url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
                 // url: 'http://192.168.16.106:8000?pass=' + localStorage.getItem('password'),
-                url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
+                // url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
                     replace(response);
