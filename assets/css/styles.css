@@ -401,7 +401,7 @@ table tr:nth-child(odd) {
   background: var(--clr-Maths);
 }
 
-.Nepali, .Botany, .Zoology {
+.Nepali, .Botany, .Zoology, .Biology {
   background: var(--clr-Nepali);
 }
 

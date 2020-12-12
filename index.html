@@ -189,7 +189,7 @@
             <div class="footer-copyright">
                 <div class="container footer-flex">
                     <a href="./index.html"><u>Copyright &copy; Section G</u></a>
-                    <p>V0.8.1</p>
+                    <p>V0.8.2</p>
                 </div>
             </div>
         </footer>
@@ -282,9 +282,9 @@
 
         function check() {
             $.ajax({
+                url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
                 // url: 'http://127.0.0.1:8000?pass=' + localStorage.getItem('password'),
                 // url: 'http://192.168.16.106:8000?pass=' + localStorage.getItem('password'),
-                url: "https://joonshakyaa1.pythonanywhere.com?pass=" + localStorage.getItem('password'),
                 dataType: 'json',
                 success: function(response){
                     replace(response);
