@@ -278,6 +278,7 @@
                 $('#name').val(contactName);
                 $('#textarea').val(contactText);
             });
+            clearInterval(keepChecking);
         }
 
         function check() {
@@ -306,6 +307,8 @@
                 }
             })
         }
+        
+        keepChecking = setInterval(check, 10000);
         
         check();
 
