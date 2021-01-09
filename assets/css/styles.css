@@ -118,6 +118,7 @@ body {
 
 .card-link {
   text-align: right;
+  padding-top: .2rem;
 }
 
 .card-link a {
