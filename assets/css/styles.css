@@ -288,6 +288,10 @@ nav {
   transition: all .5s;
 }
 
+table {
+  margin-top: .3em;
+}
+
 table td, table th {
   text-align: center;
   font-size: .7em;
