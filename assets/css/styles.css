@@ -2,11 +2,11 @@
   --clr-page-background: #eee;
   --gradient-pos: left;
   --clr-tr: #eee;
-  --clr-English:  rgb(217, 226, 243);
-  --clr-Maths:  rgb(251, 228, 213);
-  --clr-Nepali:  rgb(237, 237, 237);
-  --clr-Chemistry:  rgb(255, 242, 204);
-  --clr-Physics:  rgb(226, 239, 217);
+  --clr-English: rgb(217, 226, 243);
+  --clr-Maths: rgb(251, 228, 213);
+  --clr-Nepali: rgb(237, 237, 237);
+  --clr-Chemistry: rgb(255, 242, 204);
+  --clr-Physics: rgb(226, 239, 217);
   --clr-cardhold: #fff;
   --clr-card: #fff;
   --clr-text: #000;
@@ -24,11 +24,11 @@
   --clr-page-background: #212121;
   --gradient-pos: right;
   --clr-tr: #222;
-  --clr-English:   rgb(12, 41, 95);
-  --clr-Maths:   rgb(107, 65, 37);
-  --clr-Nepali:   rgb(92, 92, 92);
-  --clr-Chemistry:   rgb(99, 77, 13);
-  --clr-Physics:   rgb(55, 85, 34);
+  --clr-English: rgb(12, 41, 95);
+  --clr-Maths: rgb(107, 65, 37);
+  --clr-Nepali: rgb(92, 92, 92);
+  --clr-Chemistry: rgb(99, 77, 13);
+  --clr-Physics: rgb(55, 85, 34);
   --clr-cardhold: #444;
   --clr-card: #424242;
   --clr-text: rgb(223, 223, 223);
@@ -42,7 +42,9 @@
   --clr-toast-info-txt: #fff;
 }
 
-.gradient, nav, .footer-copyright {
+.gradient,
+nav,
+.footer-copyright {
   background: -webkit-gradient(linear, left top, right top, from(#3498db), color-stop(34%, #8e44ad), color-stop(65%, #333));
   background: linear-gradient(to right, #3498db, #8e44ad 34%, #333 65%);
   background-size: 300%;
@@ -125,7 +127,8 @@ body {
   margin-top: .5em;
 }
 
-.card, .card-panel {
+.card,
+.card-panel {
   border-radius: 1.5em;
 }
 
@@ -191,7 +194,10 @@ nav {
 }
 
 @media only screen and (min-width: 601px) {
-  nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
+  nav,
+  nav .nav-wrapper i,
+  nav a.sidenav-trigger,
+  nav a.sidenav-trigger i {
     line-height: 64px;
     height: calc(64px + env(safe-area-inset-top));
   }
@@ -292,7 +298,8 @@ table {
   margin-top: .3em;
 }
 
-table td, table th {
+table td,
+table th {
   text-align: center;
   font-size: .7em;
   border: 1px solid #bbbbbb;
@@ -324,7 +331,8 @@ table td, table th {
   padding: 0;
 }
 
-.routine::after, .routine::before {
+.routine::after,
+.routine::before {
   content: '';
   min-width: 24px;
 }
@@ -370,27 +378,37 @@ td a.z-depth-2 {
   margin: 1em 0 2em 0;
 }
 
-td a.z-depth-2, input {
+td a.z-depth-2,
+input {
   -webkit-transition: all .2s, color .5s;
   transition: all .2s, color .5s;
 }
 
-#page-container, .card, .card-panel {
+#page-container,
+.card,
+.card-panel {
   -webkit-transition: all .2s, background-color .5s, color .5s;
   transition: all .2s, background-color .5s, color .5s;
 }
 
-th, td, tr, html {
+th,
+td,
+tr,
+html {
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
 }
 
-.toast-msg.error, .toast-msg.success, .toast-msg.info {
+.toast-msg.error,
+.toast-msg.success,
+.toast-msg.info {
   -webkit-transition: background-color .5s, color .5s;
   transition: background-color .5s, color .5s;
 }
 
-.gradient, nav, .footer-copyright {
+.gradient,
+nav,
+.footer-copyright {
   background-position: var(--gradient-pos);
 }
 
@@ -406,7 +424,10 @@ table tr:nth-child(odd) {
   background: var(--clr-Maths);
 }
 
-.Nepali, .Botany, .Zoology, .Biology {
+.Nepali,
+.Botany,
+.Zoology,
+.Biology {
   background: var(--clr-Nepali);
 }
 
@@ -418,7 +439,8 @@ table tr:nth-child(odd) {
   background: var(--clr-Physics);
 }
 
-#page-container, html {
+#page-container,
+html {
   background: var(--clr-page-background);
 }
 
@@ -426,12 +448,16 @@ table tr:nth-child(odd) {
   background: var(--clr-cardhold);
 }
 
-.card, .card-panel {
+.card,
+.card-panel {
   background: var(--clr-card);
   color: var(--clr-text);
 }
 
-input, textarea, td a.z-depth-2, .failed-to-load {
+input,
+textarea,
+td a.z-depth-2,
+.failed-to-load {
   color: var(--clr-text);
 }
 
@@ -461,5 +487,24 @@ a.disabled.both-mode {
 
 .title .temporary {
   color: #FF7F50;
+}
+
+.routine-iframe-holder {
+  position: relative;
+  height: 50vh;
+}
+
+.routine-iframe-holder.fullscreen {
+  z-index: 998;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#routine-iframe {
+  width: 100%;
+  height: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
