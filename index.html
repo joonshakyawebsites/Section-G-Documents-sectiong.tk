@@ -120,6 +120,8 @@
                     </div>
                 </div>
             </div>
+            <div style="display: none;" id="commit_id"></div>
+            <div style="display: none;" id="today_date"></div>
             <div id="contents">
                 <div class="middle flow-text">
                     <div class="cardhold">
@@ -274,6 +276,8 @@
         function replace(response) {
             $('#contents').fadeOut("fast", function() {
                 $('#contents').html(response['html']);
+                $('#commit_id').html(response['commit_id']);
+                $('#today_date').html(response['today_date']);
                 $('#contents').fadeIn("fast");
                 $('#name').val(contactName);
                 $('#textarea').val(contactText);
