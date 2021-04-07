@@ -443,18 +443,114 @@ a.disabled.both-mode {
     color: #FF7F50
 }
 
+// .fullscreen-overlay {
+//     pointer-events: none;
+//     opacity: 0;
+//     position: absolute;
+//     background-color: #000;
+//     z-index: -1;
+//     transition: opacity .4s;
+// }
+
+// .fullscreen-overlay.show {
+//     opacity: .5;
+//     top: -1000px;
+//     left: -1000px;
+//     height: 1000vw;
+//     width: 1000%;
+// }
+
 .routine-iframe-holder {
     position: relative;
     height: 50vh;
 }
 
+.routine-iframe-holder.fullscreen_anim {
+    animation: fulscreen-enter-1 .2s ease-in, fulscreen-enter-2 .2s .2s ease-out, fixed-p 0s .4s;
+    animation-fill-mode: forwards;
+}
+
 .routine-iframe-holder.fullscreen {
-    z-index: 998;
     position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
+}
+
+.routine-iframe-holder.fullscreen_exit {
+    animation: fulscreen-exit-1 .2s ease-in, fulscreen-exit-2 .2s .2s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fulscreen-enter-1 {
+    from {
+        z-index: 998;
+        position: static;
+        transform: scale(1);
+    }
+    
+    to {
+        z-index: 998;
+        position: static;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fulscreen-enter-2 {
+    from {
+        z-index: 998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale(.8);
+    }
+
+    to {
+        z-index: 998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes fulscreen-exit-1 {
+    from {
+        z-index: 998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale(1);
+    }
+
+    to {
+        z-index: 998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: scale(.8);
+    }
+}
+
+@keyframes fulscreen-exit-2 {
+    from {
+        z-index: 998;
+        height: 50vh;
+        position: static;
+        transform: scale(1.2);
+    }
+
+    to {
+        z-index: 0;
+        height: 50vh;
+        position: static;
+        transform: scale(1);
+    }
 }
 
 #routine-iframe {

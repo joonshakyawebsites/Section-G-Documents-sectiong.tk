@@ -494,13 +494,178 @@ a.disabled.both-mode {
   height: 50vh;
 }
 
+.routine-iframe-holder.fullscreen_anim {
+  -webkit-animation: fulscreen-enter-1 .2s ease-in, fulscreen-enter-2 .2s .2s ease-out, fixed-p 0s .4s;
+          animation: fulscreen-enter-1 .2s ease-in, fulscreen-enter-2 .2s .2s ease-out, fixed-p 0s .4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
 .routine-iframe-holder.fullscreen {
-  z-index: 998;
   position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
+}
+
+.routine-iframe-holder.fullscreen_exit {
+  -webkit-animation: fulscreen-exit-1 .2s ease-in, fulscreen-exit-2 .2s .2s ease-out;
+          animation: fulscreen-exit-1 .2s ease-in, fulscreen-exit-2 .2s .2s ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fulscreen-enter-1 {
+  from {
+    z-index: 998;
+    position: static;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    z-index: 998;
+    position: static;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes fulscreen-enter-1 {
+  from {
+    z-index: 998;
+    position: static;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    z-index: 998;
+    position: static;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@-webkit-keyframes fulscreen-enter-2 {
+  from {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  to {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fulscreen-enter-2 {
+  from {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  to {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes fulscreen-exit-1 {
+  from {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+@keyframes fulscreen-exit-1 {
+  from {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    z-index: 998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+}
+
+@-webkit-keyframes fulscreen-exit-2 {
+  from {
+    z-index: 998;
+    height: 50vh;
+    position: static;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    z-index: 0;
+    height: 50vh;
+    position: static;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes fulscreen-exit-2 {
+  from {
+    z-index: 998;
+    height: 50vh;
+    position: static;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  to {
+    z-index: 0;
+    height: 50vh;
+    position: static;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 #routine-iframe {
