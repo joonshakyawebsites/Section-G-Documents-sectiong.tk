@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Section G SXC-2019/2021</title>
+    <title>Section G SXC-2019/2021 (Beta)</title>
     <meta property="og:type" content="profile" />
     <meta property="og:image" content="https://www.sectiong.tk/logo.png" />
     <meta property="og:image:type" content="image/png" />
@@ -302,6 +302,7 @@
                             replace(response);
                         },
                         error: function(rs, e) {
+                            alert(e)
                             $('#contents').fadeOut("fast", function() {
                                 $('#contents').html(`<div class="middle flow-text failed-to-load" style="padding-top: 1.75rem;">Failed to load data</div>`)
                                 $('#contents').fadeIn("fast");
