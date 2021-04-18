@@ -52,21 +52,6 @@ nav,
   transition: .5s;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  /* for vertical scrollbars */
-  height: 6px;
-  /* for horizontal scrollbars */
-}
-
-::-webkit-scrollbar-track {
-  background: #9b27b02f;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #9b27b079;
-}
-
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
 }
@@ -675,5 +660,9 @@ a.disabled.both-mode {
 
 .countdown-card table td {
   font-size: 1.1em;
+}
+
+.today-online-routine-table .width {
+  min-width: 7em;
 }
 /*# sourceMappingURL=styles.css.map */
