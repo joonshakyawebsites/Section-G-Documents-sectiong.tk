@@ -7,6 +7,7 @@
   --clr-Nepali: rgb(237, 237, 237);
   --clr-Chemistry: rgb(255, 242, 204);
   --clr-Physics: rgb(226, 239, 217);
+  --clr-Lunch: rgb(239, 229, 247);
   --clr-cardhold: #fff;
   --clr-card: #fff;
   --clr-text: #000;
@@ -29,6 +30,7 @@
   --clr-Nepali: rgb(92, 92, 92);
   --clr-Chemistry: rgb(99, 77, 13);
   --clr-Physics: rgb(55, 85, 34);
+  --clr-Lunch: rgb(69, 22, 107);
   --clr-cardhold: #444;
   --clr-card: #424242;
   --clr-text: rgb(223, 223, 223);
@@ -437,6 +439,10 @@ table tr:nth-child(odd) {
 
 .Physics {
   background: var(--clr-Physics);
+}
+
+.Lunch {
+  background: var(--clr-Lunch);
 }
 
 #page-container,
