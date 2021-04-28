@@ -490,12 +490,14 @@ a.disabled.both-mode {
         z-index: 998;
         position: static;
         transform: scale(1);
+        box-shadow: none;
     }
     
     to {
         z-index: 998;
         position: static;
         transform: scale(1.2);
+        box-shadow: 5px 5px 100px #000;
     }
 }
 
@@ -508,6 +510,7 @@ a.disabled.both-mode {
         height: 100%;
         width: 100%;
         transform: scale(.8);
+        box-shadow: 15px 15px 128px #000;
     }
 
     to {
@@ -518,6 +521,7 @@ a.disabled.both-mode {
         height: 100%;
         width: 100%;
         transform: scale(1);
+        box-shadow: 15px 15px 128px #000;
     }
 }
 
@@ -530,6 +534,7 @@ a.disabled.both-mode {
         height: 100%;
         width: 100%;
         transform: scale(1);
+        box-shadow: 15px 15px 128px #000;
     }
 
     to {
@@ -540,6 +545,7 @@ a.disabled.both-mode {
         height: 100%;
         width: 100%;
         transform: scale(.8);
+        box-shadow: 15px 15px 128px #000;
     }
 }
 
@@ -549,6 +555,7 @@ a.disabled.both-mode {
         height: 50vh;
         position: static;
         transform: scale(1.2);
+        box-shadow: 5px 5px 100px #000;
     }
 
     to {
@@ -556,6 +563,7 @@ a.disabled.both-mode {
         height: 50vh;
         position: static;
         transform: scale(1);
+        box-shadow: none;
     }
 }
 
